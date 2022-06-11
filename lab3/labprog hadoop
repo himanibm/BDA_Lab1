@@ -1,0 +1,92 @@
+duser@bmsce-Precision-T1700:~$ hdfs dfs -mkdir /games
+hduser@bmsce-Precision-T1700:~$ hdfs dfs -ls /
+Found 18 items
+drwxr-xr-x   - hduser supergroup          0 2022-06-01 10:15 /1BM19CS167
+drwxr-xr-x   - hduser supergroup          0 2022-06-01 10:03 /1bm19cs167
+-rw-r--r--   1 hduser supergroup         22 2022-06-04 10:13 /214new
+drwxr-xr-x   - hduser supergroup          0 2022-06-06 12:16 /FFF
+-rw-r--r--   1 hduser supergroup         27 2022-06-06 12:20 /LLL
+drwxr-xr-x   - hduser supergroup          0 2022-05-31 09:58 /abcde
+drwxr-xr-x   - hduser supergroup          0 2022-05-31 10:04 /abcdef
+drwxr-xr-x   - hduser supergroup          0 2022-06-03 15:37 /bda
+drwxr-xr-x   - hduser supergroup          0 2022-06-03 15:14 /bda1
+drwxr-xr-x   - hduser supergroup          0 2022-06-06 14:44 /cricket
+drwxr-xr-x   - hduser supergroup          0 2022-06-06 14:50 /games
+drwxr-xr-x   - hduser supergroup          0 2022-06-01 15:08 /laxman
+drwxr-xr-x   - hduser supergroup          0 2022-06-01 15:14 /seetha
+drwxr-xr-x   - hduser supergroup          0 2022-06-03 12:20 /shivani
+drwxr-xr-x   - hduser supergroup          0 2022-06-03 12:43 /shivanig
+drwxrwxr-x   - hduser supergroup          0 2019-08-01 16:19 /tmp
+drwxr-xr-x   - hduser supergroup          0 2019-08-01 16:03 /user
+drwxr-xr-x   - hduser supergroup          0 2022-06-03 15:24 /xyz
+hduser@bmsce-Precision-T1700:~$ hdfs dfs -put /home/hduser/Desktop/Welcome.txt /games/cricket.txt
+hduser@bmsce-Precision-T1700:~$ hdfs dfs -cat /games/cricket.txt
+henlo
+hduser@bmsce-Precision-T1700:~$ hdfs dfs -copyFromLocal /home/hduser/Desktop/Welcome.txt /games/football.txt
+hduser@bmsce-Precision-T1700:~$ hdfs dfs -copyToLocal /games/cricket.txt /home/hduser/Desktop/great.txt
+duser@bmsce-Precision-T1700:~$ hadoop fs -mv /cricket /newFolder
+hduser@bmsce-Precision-T1700:~$ hadoop fs -ls /
+Found 18 items
+drwxr-xr-x   - hduser supergroup          0 2022-06-01 10:15 /1BM19CS167
+drwxr-xr-x   - hduser supergroup          0 2022-06-01 10:03 /1bm19cs167
+-rw-r--r--   1 hduser supergroup         22 2022-06-04 10:13 /214new
+drwxr-xr-x   - hduser supergroup          0 2022-06-06 12:16 /FFF
+-rw-r--r--   1 hduser supergroup         27 2022-06-06 12:20 /LLL
+drwxr-xr-x   - hduser supergroup          0 2022-05-31 09:58 /abcde
+drwxr-xr-x   - hduser supergroup          0 2022-05-31 10:04 /abcdef
+drwxr-xr-x   - hduser supergroup          0 2022-06-03 15:37 /bda
+drwxr-xr-x   - hduser supergroup          0 2022-06-03 15:14 /bda1
+drwxr-xr-x   - hduser supergroup          0 2022-06-06 14:55 /games
+drwxr-xr-x   - hduser supergroup          0 2022-06-01 15:08 /laxman
+drwxr-xr-x   - hduser supergroup          0 2022-06-06 14:44 /newFolder
+drwxr-xr-x   - hduser supergroup          0 2022-06-01 15:14 /seetha
+drwxr-xr-x   - hduser supergroup          0 2022-06-03 12:20 /shivani
+drwxr-xr-x   - hduser supergroup          0 2022-06-03 12:43 /shivanig
+drwxrwxr-x   - hduser supergroup          0 2019-08-01 16:19 /tmp
+drwxr-xr-x   - hduser supergroup          0 2019-08-01 16:03 /user
+drwxr-xr-x   - hduser supergroup          0 2022-06-03 15:24 /xyz
+hduser@bmsce-Precision-T1700:~$ hadoop fs -cp /newFolder/ /cricket
+hduser@bmsce-Precision-T1700:~$ hadoop fs -ls /
+Found 19 items
+drwxr-xr-x   - hduser supergroup          0 2022-06-01 10:15 /1BM19CS167
+drwxr-xr-x   - hduser supergroup          0 2022-06-01 10:03 /1bm19cs167
+-rw-r--r--   1 hduser supergroup         22 2022-06-04 10:13 /214new
+drwxr-xr-x   - hduser supergroup          0 2022-06-06 12:16 /FFF
+-rw-r--r--   1 hduser supergroup         27 2022-06-06 12:20 /LLL
+drwxr-xr-x   - hduser supergroup          0 2022-05-31 09:58 /abcde
+drwxr-xr-x   - hduser supergroup          0 2022-05-31 10:04 /abcdef
+drwxr-xr-x   - hduser supergroup          0 2022-06-03 15:37 /bda
+drwxr-xr-x   - hduser supergroup          0 2022-06-03 15:14 /bda1
+drwxr-xr-x   - hduser supergroup          0 2022-06-06 15:02 /cricket
+drwxr-xr-x   - hduser supergroup          0 2022-06-06 14:55 /games
+drwxr-xr-x   - hduser supergroup          0 2022-06-01 15:08 /laxman
+drwxr-xr-x   - hduser supergroup          0 2022-06-06 14:44 /newFolder
+drwxr-xr-x   - hduser supergroup          0 2022-06-01 15:14 /seetha
+drwxr-xr-x   - hduser supergroup          0 2022-06-03 12:20 /shivani
+drwxr-xr-x   - hduser supergroup          0 2022-06-03 12:43 /shivanig
+drwxrwxr-x   - hduser supergroup          0 2019-08-01 16:19 /tmp
+drwxr-xr-x   - hduser supergroup          0 2019-08-01 16:03 /user
+drwxr-xr-x   - hduser supergroup          0 2022-06-03 15:24 /xyz
+hduser@bmsce-Precision-T1700:~$ hadoop fs -ls /cricket
+Found 1 items
+-rw-r--r--   1 hduser supergroup          0 2022-06-06 15:02 /cricket/bat.txt
+hduser@bmsce-Precision-T1700:~$ hadoop fs -ls /newFolder
+Found 1 items
+-rw-r--r--   1 hduser supergroup          0 2022-06-06 14:44 /newFolder/bat.txt
+hduser@bmsce-Precision-T1700:~$ hadoop fs -ls /games
+Found 2 items
+-rw-r--r--   1 hduser supergroup          6 2022-06-06 14:53 /games/cricket.txt
+-rw-r--r--   1 hduser supergroup          6 2022-06-06 14:55 /games/football.txt
+hduser@bmsce-Precision-T1700:~$ hdfs dfs -getmerge /games/cricket.txt /games/football.txt /home/hduser/Desktop/mergedFile.txt
+hduser@bmsce-Precision-T1700:~$ hdfs dfs -get /games/cricket.txt /home.hduser/Desktop/mergedFile.txt
+get: `/home.hduser/Desktop/mergedFile.txt': No such file or directory
+hduser@bmsce-Precision-T1700:~$ hdfs dfs -get /games/cricket.txt /home/hduser/Desktop/mergedFile.txt
+get: `/home/hduser/Desktop/mergedFile.txt': File exists
+hduser@bmsce-Precision-T1700:~$ hdfs dfs -get /games/cricket.txt /home/hduser/Desktop/mergeFile.txt
+hduser@bmsce-Precision-T1700:~$ hadoop fs -getfacl /games/
+# file: /games
+# owner: hduser
+# group: supergroup
+user::rwx
+group::r-x
+other::r-x
